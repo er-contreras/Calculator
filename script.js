@@ -1,6 +1,5 @@
 'use strict';
 
-// Functions of Operators
 const add = function(num1, num2) {
   return num1 + num2;
 };
@@ -17,117 +16,64 @@ const divide = function(num1, num2) {
   return num1 / num2;
 };
 
-// Calling Operators
-const addOperator = document.querySelector('.addOperator');
-const subtractOperator = document.querySelector('.subtractOperator');
-const multiplyOperator = document.querySelector('.multiplyOperator');
-const divideOperator = document.querySelector('.divideOperator');
-
-// Ccalling current operand
-const currentOperand = document.querySelector('current-operand');
-const previousOperand = document.querySelector('previous-operand');
-
-// Numbers
-// let numberOne = document.querySelector('.number-one');
-// let numberTwo = document.querySelector('.number-two');
-// let numberThree = document.querySelector('.number-three');
-// let numberFour = document.querySelector('.number-four');
-// let numberFive = document.querySelector('.number-five');
-// let numberSix = document.querySelector('.number-six');
-// let numberSeven = document.querySelector('.number-seven');
-// let numberEight = document.querySelector('.number-eight');
-// let numberNine = document.querySelector('.number-nine');
-// let numberCero = document.querySelector('.number-cero');
+const outPut = document.getElementById('output');
+const num = document.getElementsByClassName('number');
+const addBtn = document.querySelector('.addOperator');
+const equals = document.querySelector('.equals');
+const subtractBtn = document.querySelector('.subtractOperator');
+const multiplyBtn = document.querySelector('.multiplyOperator');
+const divideBtn = document.querySelector('.divideOperator');
+const allClear = document.querySelector('.ac');
 
 
-// Displaying numbers in the console and in the div current operand.
-const displaying = function() {
-  // numberOne.addEventListener('click', function() {
-  //   numberOne = Number('1');
-  //   console.log(numberOne);
-  //   document.getElementById('current-operand').textContent = 1;
+let plusFirsValue;
+let secondValue;
+let subFirstValue;
+let multFirstValue;
+let divFirstValue;
 
-    const input = document.querySelector('input');
-    document.querySelectorAll('.number').forEach(function (button, index) {
-      button.addEventListener('click', function () {
-        input.value += index + 1;
-      });
-    });
-  // });
+for(let i = 0; i < num.length; i++) {
+  num[i].addEventListener('click', function() { 
+    outPut.innerText += num[i].innerText;
+    console.log(outPut.innerText);
+  });
+};
 
-  // numberTwo.addEventListener('click', function() {
-  //   numberTwo = Number('2');
-  //   console.log(numberTwo);
-  //   document.getElementById('current-operand').textContent = 2;
-  // });
-
-  // numberThree.addEventListener('click', function() {
-  //   numberThree = Number('3');
-  //   console.log(numberThree);
-  // });
+addBtn.addEventListener('click', function() {
+  plusFirsValue = Number(outPut.innerText);
+  outPut.innerText = '';
+  console.log(plusFirsValue);
+});
   
-  // numberFour.addEventListener('click', function() {
-  //   numberFour = Number('4');
-  //   console.log(numberFour);
-  // });
+subtractBtn.addEventListener('click', function() {
+  subFirstValue = Number(outPut.innerText);
+  outPut.innerText = '';
+  console.log(plusFirsValue);
+});
 
-  // numberFive.addEventListener('click', function() {
-  //   numberFive = Number('5');
-  //   console.log(numberFive);
-  // });
+multiplyBtn.addEventListener('click', function() {
+  multFirstValue = Number(outPut.innerText);
+    outPut.innerText = '';
+});
 
-  // numberSix.addEventListener('click', function() {
-  //   numberSix = Number('6');
-  //   console.log(numberSix);
-  // });
+divideBtn.addEventListener('click', function() {
+  divFirstValue = Number(outPut.innerText);
+    outPut.innerText = '';
+});
 
-  // numberSeven.addEventListener('click', function() {
-  //   numberSeven = Number('7');
-  //   console.log(numberSeven);
-  // });
-
-  // numberEight.addEventListener('click', function() {
-  //   numberEight = Number('8');
-  //   console.log(numberEight);
-  // });
-
-  // numberNine.addEventListener('click', function() {
-  //   numberNine = Number('9');
-  //   console.log(numberNine);
-  // });
-
-  // numberCero.addEventListener('click', function() {
-  //   numberCero = Number('0');
-  //   console.log(numberCero);
-  // });
-};
-
-// Operate with operators
-function operate() {
-  addOperator.addEventListener('click', function() {
-    const userNumberOne = Number(prompt('Choose the first number'));
-    const userNumberTwo = Number(prompt('Choose the second number'));
-    console.log(add(userNumberOne, userNumberTwo));
-  });
-
-  subtractOperator.addEventListener('click', function() {
-    const userNumberOne = Number(prompt('Choose the first number'));
-    const userNumberTwo = Number(prompt('Choose the second number'));
-    console.log(subtract(userNumberOne, userNumberTwo));
-  });
-
-  multiplyOperator.addEventListener('click', function() {
-    const userNumberOne = Number(prompt('Choose the first number'));
-    const userNumberTwo = Number(prompt('Choose the second number'));
-    console.log(multiply(userNumberOne, userNumberTwo));
-  });
-
-  divideOperator.addEventListener('click', function() {
-    const userNumberOne = Number(prompt('Choose the first number'));
-    const userNumberTwo = Number(prompt('Choose the second number'));
-    console.log(divide(userNumberOne, userNumberTwo));
-  });
-};
-
-operate();
-displaying();
+equals.addEventListener('click', function() {
+  secondValue = Number(outPut.innerText);
+  if (plusFirsValue && secondValue) {
+    outPut.innerText = add(plusFirsValue, secondValue);
+    console.log(add(plusFirsValue, secondValue));
+  } else if (subFirstValue && secondValue) {
+    outPut.innerText = subtract(subFirstValue, secondValue);
+    console.log(subtract(subFirstValue, secondValue));
+  } else if (multFirstValue && secondValue) {
+    outPut.innerText = multiply(multFirstValue, secondValue);
+    console.log(multiply(multFirstValue, secondValue));
+  } else if (divFirstValue && secondValue) {
+    outPut.innerText = divide(divFirstValue, secondValue);
+    console.log(divide(divFirstValue, secondValue));
+  }
+});
