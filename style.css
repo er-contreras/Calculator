@@ -14,15 +14,17 @@ html {
 body {
   /* background-color: rgb(0, 253, 253); */
   min-height: 100vh;
+  background: linear-gradient(35deg,red 15%, orange 20%);
 }
 
 #calculator-grid {
-  background: linear-gradient(to right, #0011ffc7, #00ff73a8);
   display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   grid-template-columns: repeat(4, 70px);
+  /* greater than or equal to min */
   grid-template-rows: minmax(70px, auto) repeat(5, 70px);
   /* margin: 8px; */
 }
@@ -47,8 +49,7 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   /* unicode-bidi: bidi-override; */
-  padding: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   padding: 10px;
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .sun {
-  background-color: rgb(221, 200, 8);
+  background-color: rgb(255, 230, 0);
   border-radius: 50%;
   margin: 10px;
 }

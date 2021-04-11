@@ -1,5 +1,6 @@
 'use strict';
 
+// Operation Functions
 const add = function(num1, num2) {
   return num1 + num2;
 };
@@ -16,21 +17,25 @@ const divide = function(num1, num2) {
   return num1 / num2;
 };
 
+// Our Buttons
 const outPut = document.getElementById('output');
 const num = document.getElementsByClassName('number');
+
 const addBtn = document.querySelector('.addOperator');
-const equals = document.querySelector('.equals');
 const subtractBtn = document.querySelector('.subtractOperator');
 const multiplyBtn = document.querySelector('.multiplyOperator');
 const divideBtn = document.querySelector('.divideOperator');
+
 const allClear = document.querySelector('.ac');
 
+const equals = document.querySelector('.equals');
 
-let plusFirsValue;
-let secondValue;
-let subFirstValue;
-let multFirstValue;
-let divFirstValue;
+
+let plusFirsValue = 0;
+let secondValue = 0;
+let subFirstValue = 0;
+let multFirstValue = 0;
+let divFirstValue = 0;
 
 for(let i = 0; i < num.length; i++) {
   num[i].addEventListener('click', function() { 
