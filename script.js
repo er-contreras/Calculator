@@ -1,5 +1,29 @@
 'use strict';
 
+
+// Calculator letters
+// let letters = document.querySelector('#letters').innerHTML;
+// let nHTML = '';
+
+// // htmlContent = source.innerText;
+// // htmlContent.split('');
+  
+// for(let i = 0; i < letters.length; i++) {
+//   nHTML += "<span class = 'x'" + letters[i] + "</span>";
+// };
+
+// document.querySelector('#letters').innerHTML = nHTML;
+
+// Changing color letters from the string "Calculator"
+let letters = document.querySelector('#letters').textContent;
+let nHTML = '';
+
+for(let i of letters) {
+  nHTML += "<span class = 'x'>" + i + "</span>"; 
+};
+
+document.querySelector('#letters').innerHTML = nHTML;
+
 // Operation Functions
 const add = function(num1, num2) {
   return num1 + num2;

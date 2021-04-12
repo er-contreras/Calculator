@@ -40,6 +40,23 @@ body {
   background-color: rgb(33, 169, 169);
 }
 
+header {
+  text-align: center;
+  width: 300px;
+  margin: 40px auto 0 auto;
+  font-size: 3rem;
+}
+
+@media only screen and (min-height: 800px) {
+  header {
+    margin: 153px auto 0 auto;
+  }
+}
+
+.x:hover {
+  color: rgb(255, 255, 255);
+}
+
 #output {
   grid-column: span 4;
   font-size: 30px;
