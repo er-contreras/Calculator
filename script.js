@@ -1,30 +1,17 @@
 'use strict';
 
-
-// Calculator letters
-// let letters = document.querySelector('#letters').innerHTML;
-// let nHTML = '';
-
-// // htmlContent = source.innerText;
-// // htmlContent.split('');
-  
-// for(let i = 0; i < letters.length; i++) {
-//   nHTML += "<span class = 'x'" + letters[i] + "</span>";
-// };
-
-// document.querySelector('#letters').innerHTML = nHTML;
-
 // Changing color letters from the string "Calculator"
 let letters = document.querySelector('#letters').textContent;
 let nHTML = '';
 
+// for... of, pull just the value rather than the key of and object.
 for(let i of letters) {
   nHTML += "<span class = 'x'>" + i + "</span>"; 
 };
-
+// Now that we have all the letters with the class 'x' we just need to change the color in CDD
 document.querySelector('#letters').innerHTML = nHTML;
 
-// Operation Functions
+// ------------------------- Calculator start here. --------------------->
 const add = function(num1, num2) {
   return num1 + num2;
 };
@@ -40,7 +27,7 @@ const multiply = function(num1, num2) {
 const divide = function(num1, num2) {
   return num1 / num2;
 };
-
+ 
 // Our Buttons
 const outPut = document.getElementById('output');
 const num = document.getElementsByClassName('number');
@@ -55,7 +42,7 @@ const allClear = document.querySelector('.ac');
 const equals = document.querySelector('.equals');
 
 
-let plusFirsValue = 0;
+let plusFirsValue = '';
 let secondValue = 0;
 let subFirstValue = 0;
 let multFirstValue = 0;
@@ -106,3 +93,8 @@ equals.addEventListener('click', function() {
     console.log(divide(divFirstValue, secondValue));
   }
 });
+
+allClear.addEventListener('click', function() {
+  outPut.innerText = '';
+})
+

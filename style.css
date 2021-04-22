@@ -58,16 +58,14 @@ header {
 }
 
 #output {
+  display: flex;
+  justify-content: flex-end;
   grid-column: span 4;
   font-size: 30px;
   background-color: rgba(0, 0, 0, 0.50);
   color: white;
-  /* direction: rtl; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* unicode-bidi: bidi-override; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
   padding: 10px;
 }
 
