@@ -1,30 +1,18 @@
 'use strict';
-
-// Changing color letters from the string "Calculator"
-let letters = document.querySelector('#letters').textContent;
-let nHTML = '';
-
-// for... of, pull just the value rather than the key of and object.
-for(let i of letters) {
-  nHTML += "<span class = 'x'>" + i + "</span>"; 
-};
-// Now that we have all the letters with the class 'x' we just need to change the color in CDD
-document.querySelector('#letters').innerHTML = nHTML;
-
 // ------------------------- Calculator start here. --------------------->
-const add = function(num1, num2) {
+const add = (num1, num2) => {
   return num1 + num2;
 };
 
-const subtract = function(num1, num2) {
+const subtract = (num1, num2) => {
   return num1 - num2;
 };
 
-const multiply = function(num1, num2) {
+const multiply = (num1, num2) => {
   return num1 * num2;
 };
 
-const divide = function(num1, num2) {
+const divide = (num1, num2) => {
   return num1 / num2;
 };
  
@@ -49,35 +37,35 @@ let multFirstValue = 0;
 let divFirstValue = 0;
 
 for(let i = 0; i < num.length; i++) {
-  num[i].addEventListener('click', function() { 
+  num[i].addEventListener('click', () => { 
     outPut.innerText += num[i].innerText;
     console.log(outPut.innerText);
   });
 };
 
-addBtn.addEventListener('click', function() {
+addBtn.addEventListener('click', () => {
   plusFirsValue = Number(outPut.innerText);
   outPut.innerText = '';
   console.log(plusFirsValue);
 });
   
-subtractBtn.addEventListener('click', function() {
+subtractBtn.addEventListener('click', () => {
   subFirstValue = Number(outPut.innerText);
   outPut.innerText = '';
   console.log(plusFirsValue);
 });
 
-multiplyBtn.addEventListener('click', function() {
+multiplyBtn.addEventListener('click', () => {
   multFirstValue = Number(outPut.innerText);
     outPut.innerText = '';
 });
 
-divideBtn.addEventListener('click', function() {
+divideBtn.addEventListener('click', () => {
   divFirstValue = Number(outPut.innerText);
     outPut.innerText = '';
 });
 
-equals.addEventListener('click', function() {
+equals.addEventListener('click', () => {
   secondValue = Number(outPut.innerText);
   if (plusFirsValue && secondValue) {
     outPut.innerText = add(plusFirsValue, secondValue);
@@ -94,7 +82,7 @@ equals.addEventListener('click', function() {
   }
 });
 
-allClear.addEventListener('click', function() {
+allClear.addEventListener('click', () => {
   outPut.innerText = '';
 })
 
